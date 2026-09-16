@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-surface text-ink_text font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+  }
+  a {
+    @apply text-ink underline-offset-2;
+  }
+  :focus-visible {
+    outline: 2px solid #14213D;
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: #E8A33D;
+    color: #14213D;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-card bg-ink px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-card border border-surface-border bg-white px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .card {
+    @apply rounded-card border border-surface-border bg-surface-card p-4;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-card bg-ink-50;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

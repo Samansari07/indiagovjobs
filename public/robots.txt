@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /profile
+Disallow: /saved-jobs
+Disallow: /login
+
+Sitemap: https://indiagovjobs.in/sitemap.xml
